@@ -13,14 +13,19 @@ int main(void) {
     double rad = 20 - 10*sx;
     double x = 150 + 100*cx;
     double y = 100 + 50*sx;
+    double sx2 = sin(2*PI*(i+20)/40);
+    double cx2 = cos(2*PI*(i+20)/40);
+    double rad2 = 20 - 10*cx2;
+    double x2 = 150 + 100*cx2;
+    double y2 = 100 + 50*sx2;
+
     img_clear();
     // img_fillcircle(c2, x, y, rad);
-    // img_fillrect(c2, x, y, rad, rad);
+    img_fillrect(c2, x2, y2, rad2, rad2);
     double xx[] = {100,20,30,10};
     double yy[] = {100,20,30,10};
-    // img_fillconvex(c2, 3, xx, yy);
     // filltriangle(200, 100, 300, 100, 250, 200, 200, 100, 250, 0.5)
-    img_filltriangle(c2, 200, 100, 220, 100, 210, 110);
+    img_filltriangle(c2, x - rad, y, x + rad, y, x, y + rad);
     img_write();
   }
 }
