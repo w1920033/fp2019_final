@@ -15,7 +15,12 @@ int main(void) {
     double y = 100 + 50*sx;
     img_clear();
     // img_fillcircle(c2, x, y, rad);
-    img_fillrect(c2, x, y, rad, rad);
+    // img_fillrect(c2, x, y, rad, rad);
+    double xx[] = {100,20,30,10};
+    double yy[] = {100,20,30,10};
+    // img_fillconvex(c2, 3, xx, yy);
+    // filltriangle(200, 100, 300, 100, 250, 200, 200, 100, 250, 0.5)
+    img_filltriangle(c2, 200, 100, 220, 100, 210, 110);
     img_write();
   }
 }
