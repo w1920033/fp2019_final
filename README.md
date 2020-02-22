@@ -6,6 +6,7 @@ FP2019の最終課題
 初回は以下を実行することで、コードをコピーできる。fp2019_finalというフォルダができる。
 
 ```
+ssh [学籍番号]@sol.edu.cc.uec.ac.jp
 git clone https://github.com/ryuchan00/fp2019_final.git
 ```
 
