@@ -16,7 +16,7 @@ void img_clear(void) {
 }
 
 void img_write(void) {
-    sprintf(fname, "img%04d.ppm", ++filecnt);
+    sprintf(fname, "img/img%04d.ppm", ++filecnt);
     FILE *f = fopen(fname, "wb");
     if (f == NULL) {
         fprintf(stderr, "can't open %s\n", fname);
