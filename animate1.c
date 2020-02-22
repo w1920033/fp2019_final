@@ -7,6 +7,7 @@ int main(void) {
   struct color c1 = { 30, 255, 0 };
   struct color c2 = { 255, 0, 0 };
   int i;
+  int j;
   for(i = 0; i < 40; ++i) {
     double sx = sin(2*PI*i/40);
     double cx = cos(2*PI*i/40);
@@ -18,6 +19,9 @@ int main(void) {
     double rad2 = 20 - 10*cx2;
     double x2 = 150 + 100*cx2;
     double y2 = 100 + 50*sx2;
+    c2.r = 255 - j;
+    c2.g =  100 + j;
+    j += 2;
 
     img_clear();
     // img_fillcircle(c2, x, y, rad);
