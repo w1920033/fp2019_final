@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "img.h"
 
 static unsigned char buf[HEIGHT][WIDTH][3];
@@ -43,4 +44,13 @@ void img_fillcircle(struct color c, double x, double y, double r) {
             if ((x - i) * (x - i) + (y - j) * (y - j) <= r * r) { img_putpixel(c, i, j); }
         }
     }
+}
+
+void img_fillrect(struct color c, double x, double y, double w, double h) {
+  int imin = (int)(x - w/2), imax = (int)(x + w/2);
+  int jmin = (int)(y - h/2), jmax = (int)(y + h/2);
+  int i, j;
+  for(j = jmin; j <= jmax; ++j) {
+    for(i = imin; i <= imax; ++i) { img_putpixel(c, i, j); }
+  }
 }
