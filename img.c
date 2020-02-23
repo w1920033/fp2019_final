@@ -75,6 +75,19 @@ void img_fillrect(struct color c, double x, double y, double w, double h)
     }
 }
 
+void img_fillellipsedonut(struct color c, double x, double y, double rx1, double ry1, double rx2, double ry2) {
+  int imin = (int)(x - rx1 - 1), imax = (int)(x + rx1 + 1);
+  int jmin = (int)(y - ry1 - 1), jmax = (int)(y + ry1 + 1);
+  int i, j;
+  for(j = jmin; j <= jmax; ++j) {
+    for(i = imin; i <= imax; ++i) {
+      if((x-i)*(x-i)/(rx1*rx1) + (y-j)*(y-j)/(ry1*ry1) <= 1.0 || (x-i)*(x-i)/(rx2*rx2) + (y-j)*(y-j)/(ry2*ry2) >= 1.0 ) {
+        img_putpixel(c, i, j);
+      }
+    }
+  }
+}
+
 static double oprod(double a, double b, double c, double d)
 {
     return a * d - b * c;
